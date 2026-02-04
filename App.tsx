@@ -4,37 +4,36 @@
  *
  * @format
  */
+import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-  Text,
-} from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+import Bingo from './src/components/BingoGrid';
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <AppContent />
     </SafeAreaProvider>
   );
 }
 
 function AppContent() {
+  const isDarkMode = useColorScheme() === 'dark';
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
-      <Text>Hai!</Text>
+    <View style={[styles.Page, { paddingTop: insets.top }]}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <Bingo />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Page: {
     flex: 1,
+    backgroundColor: '#c5e4ff',
   },
 });
 

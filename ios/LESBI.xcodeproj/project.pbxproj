@@ -11,6 +11,18 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		61BE39E2554A4288AD8C1884 /* FunnelSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97EA2CBC5B474C21A4388EAC /* FunnelSans-Bold.ttf */; };
+		874E4B13F8964676A3814267 /* FunnelSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1B8F4C723984293ADFB4033 /* FunnelSans-BoldItalic.ttf */; };
+		4ABA7613F0194D5D96AB603F /* FunnelSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D4A930285224CE3B5578E82 /* FunnelSans-ExtraBold.ttf */; };
+		8DA52C4DB24B435899BD09CB /* FunnelSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F94705C500A4358933F6557 /* FunnelSans-ExtraBoldItalic.ttf */; };
+		4EBE34259D3844F588D51EC0 /* FunnelSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2153E9A9B7D14CC398652131 /* FunnelSans-Italic.ttf */; };
+		32174FC2A70C44658A23F57C /* FunnelSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D028B4624BF4CF6AD644A06 /* FunnelSans-Light.ttf */; };
+		0C0704799B924C61BBB3A471 /* FunnelSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0EA4AC053AE40F0AA2ACD1B /* FunnelSans-LightItalic.ttf */; };
+		CEDAB8FC3E9A4AF88CD4A6C2 /* FunnelSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54A008D9B3894FAB9B04933F /* FunnelSans-Medium.ttf */; };
+		E03033F88F4049B9A1BE78A7 /* FunnelSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6BE9783757A4CDCB78F29DD /* FunnelSans-MediumItalic.ttf */; };
+		23ED9347FC314A08B6099400 /* FunnelSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED0DF853C197455D82BE92F6 /* FunnelSans-Regular.ttf */; };
+		6A7DB9AE630349BF97FA7B16 /* FunnelSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F84A40815947658F45CABB /* FunnelSans-SemiBold.ttf */; };
+		A5F1B686B4B1421588E06D3A /* FunnelSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD5FA1A693D44B0693141311 /* FunnelSans-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,18 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = LESBI/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LESBI/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		97EA2CBC5B474C21A4388EAC /* FunnelSans-Bold.ttf */ = {isa = PBXFileReference; name = "FunnelSans-Bold.ttf"; path = "../src/assets/fonts/FunnelSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B1B8F4C723984293ADFB4033 /* FunnelSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-BoldItalic.ttf"; path = "../src/assets/fonts/FunnelSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D4A930285224CE3B5578E82 /* FunnelSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "FunnelSans-ExtraBold.ttf"; path = "../src/assets/fonts/FunnelSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9F94705C500A4358933F6557 /* FunnelSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/FunnelSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2153E9A9B7D14CC398652131 /* FunnelSans-Italic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-Italic.ttf"; path = "../src/assets/fonts/FunnelSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D028B4624BF4CF6AD644A06 /* FunnelSans-Light.ttf */ = {isa = PBXFileReference; name = "FunnelSans-Light.ttf"; path = "../src/assets/fonts/FunnelSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F0EA4AC053AE40F0AA2ACD1B /* FunnelSans-LightItalic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-LightItalic.ttf"; path = "../src/assets/fonts/FunnelSans-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54A008D9B3894FAB9B04933F /* FunnelSans-Medium.ttf */ = {isa = PBXFileReference; name = "FunnelSans-Medium.ttf"; path = "../src/assets/fonts/FunnelSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D6BE9783757A4CDCB78F29DD /* FunnelSans-MediumItalic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-MediumItalic.ttf"; path = "../src/assets/fonts/FunnelSans-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ED0DF853C197455D82BE92F6 /* FunnelSans-Regular.ttf */ = {isa = PBXFileReference; name = "FunnelSans-Regular.ttf"; path = "../src/assets/fonts/FunnelSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C5F84A40815947658F45CABB /* FunnelSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "FunnelSans-SemiBold.ttf"; path = "../src/assets/fonts/FunnelSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD5FA1A693D44B0693141311 /* FunnelSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "FunnelSans-SemiBoldItalic.ttf"; path = "../src/assets/fonts/FunnelSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +98,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				3D0B11EFC5724F14B3AF8C11 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +121,26 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		3D0B11EFC5724F14B3AF8C11 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				97EA2CBC5B474C21A4388EAC /* FunnelSans-Bold.ttf */,
+				B1B8F4C723984293ADFB4033 /* FunnelSans-BoldItalic.ttf */,
+				6D4A930285224CE3B5578E82 /* FunnelSans-ExtraBold.ttf */,
+				9F94705C500A4358933F6557 /* FunnelSans-ExtraBoldItalic.ttf */,
+				2153E9A9B7D14CC398652131 /* FunnelSans-Italic.ttf */,
+				9D028B4624BF4CF6AD644A06 /* FunnelSans-Light.ttf */,
+				F0EA4AC053AE40F0AA2ACD1B /* FunnelSans-LightItalic.ttf */,
+				54A008D9B3894FAB9B04933F /* FunnelSans-Medium.ttf */,
+				D6BE9783757A4CDCB78F29DD /* FunnelSans-MediumItalic.ttf */,
+				ED0DF853C197455D82BE92F6 /* FunnelSans-Regular.ttf */,
+				C5F84A40815947658F45CABB /* FunnelSans-SemiBold.ttf */,
+				CD5FA1A693D44B0693141311 /* FunnelSans-SemiBoldItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +204,18 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				61BE39E2554A4288AD8C1884 /* FunnelSans-Bold.ttf in Resources */,
+				874E4B13F8964676A3814267 /* FunnelSans-BoldItalic.ttf in Resources */,
+				4ABA7613F0194D5D96AB603F /* FunnelSans-ExtraBold.ttf in Resources */,
+				8DA52C4DB24B435899BD09CB /* FunnelSans-ExtraBoldItalic.ttf in Resources */,
+				4EBE34259D3844F588D51EC0 /* FunnelSans-Italic.ttf in Resources */,
+				32174FC2A70C44658A23F57C /* FunnelSans-Light.ttf in Resources */,
+				0C0704799B924C61BBB3A471 /* FunnelSans-LightItalic.ttf in Resources */,
+				CEDAB8FC3E9A4AF88CD4A6C2 /* FunnelSans-Medium.ttf in Resources */,
+				E03033F88F4049B9A1BE78A7 /* FunnelSans-MediumItalic.ttf in Resources */,
+				23ED9347FC314A08B6099400 /* FunnelSans-Regular.ttf in Resources */,
+				6A7DB9AE630349BF97FA7B16 /* FunnelSans-SemiBold.ttf in Resources */,
+				A5F1B686B4B1421588E06D3A /* FunnelSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
