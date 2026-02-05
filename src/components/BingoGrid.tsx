@@ -3,81 +3,101 @@ import Pola from './../json/Pola.json';
 import { useState } from 'react';
 
 function Bingo() {
-  const [resetCounter, setResetCounter] = useState(0);
-  const [rows, setRows] = useState(GenerateFields(0));
+  const [rows, setRows] = useState(GenerateFields());
+  const [board, setBoard] = useState(
+    Array(5)
+      .fill(null)
+      .map(() => Array(5).fill(false)),
+  );
+  const [win, setWin] = useState(false);
 
   const Reset = () => {
-    const next = resetCounter + 1;
-    setResetCounter(next);
-    setRows(GenerateFields(next));
+    setRows(GenerateFields());
+    setBoard(
+      Array(5)
+        .fill(null)
+        .map(() => Array(5).fill(false)),
+    );
+    setWin(false);
+  };
+
+  const toggleCell = (r: number, c: number) => {
+    const updated = board.map(row => [...row]);
+    updated[r][c] = !updated[r][c];
+    setBoard(updated);
+
+    if (checkWin(updated)) {
+      setWin(true);
+    }
   };
 
   return (
     <View style={gridStyle.bingoGrid}>
-      <BingoGrid rows={rows} resetCounter={resetCounter} />
+      <BingoGrid rows={rows} board={board} toggleCell={toggleCell} />
+
       <Pressable onPress={Reset}>
         <Text style={gridStyle.reset}>RESET</Text>
       </Pressable>
+
+      {win && (
+        <View style={gridStyle.winBox}>
+          <Text>Wygrałeś!</Text>
+        </View>
+      )}
     </View>
   );
 }
 
-function GenerateFields(resetCounter: number) {
+function GenerateFields() {
   let lastid = Pola.pola.length;
   let setOfTexts = new Set<string>();
 
-  for (let i: number = 0; i < 25; i++) {
+  for (let i = 0; i < 25; i++) {
     if (i === 12) {
       setOfTexts.add('Darmowe!');
       continue;
     }
 
     let text: string | undefined;
-
     do {
       text = Pola.pola.at(Math.floor(Math.random() * lastid))?.text;
     } while (text && setOfTexts.has(text));
 
     if (text) setOfTexts.add(text);
   }
-  const arrayOfText = Array.from(setOfTexts);
 
-  const rows = [];
+  return Array.from(setOfTexts);
+}
+
+function BingoGrid({ rows, board, toggleCell }: any) {
+  const grid = [];
+
   for (let r = 0; r < 5; r++) {
     const cells = [];
     for (let c = 0; c < 5; c++) {
       cells.push(
-        <Pressable key={c}>
-          <Field
-            key={`${resetCounter}-${r}-${c}`}
-            value={arrayOfText.at(r * 5 + c) ?? ''}
-          />
-        </Pressable>,
+        <Field
+          key={`${r}-${c}`}
+          value={rows[r * 5 + c]}
+          checked={board[r][c]}
+          onToggle={() => toggleCell(r, c)}
+        />,
       );
     }
-    rows.push(
+
+    grid.push(
       <View key={r} style={[gridStyle.gridRow, r === 0 && gridStyle.topRow]}>
         {cells}
       </View>,
     );
   }
 
-  return rows;
+  return <View>{grid}</View>;
 }
 
-function BingoGrid({ rows }: any) {
-  return <View>{rows}</View>;
-}
-
-type fieldProps = {
-  value: string;
-};
-
-function Field({ value }: fieldProps) {
-  const [checked, setChecked] = useState(false);
-
+function Field({ value, checked, onToggle }: any) {
   return (
-    <Pressable style={gridStyle.fieldBox} onPress={() => setChecked(!checked)}>
+    <Pressable style={gridStyle.fieldBox} onPress={onToggle}>
       {checked && (
         <Image
           style={gridStyle.checked}
@@ -87,6 +107,22 @@ function Field({ value }: fieldProps) {
       <Text style={gridStyle.fieldText}>{value}</Text>
     </Pressable>
   );
+}
+
+function checkWin(board: boolean[][]) {
+  for (let r = 0; r < 5; r++) {
+    if (board[r].every(v => v)) return true;
+  }
+
+  for (let c = 0; c < 5; c++) {
+    if (board.every(row => row[c])) return true;
+  }
+
+  if ([0, 1, 2, 3, 4].every(i => board[i][i])) return true;
+
+  if ([0, 1, 2, 3, 4].every(i => board[i][4 - i])) return true;
+
+  return false;
 }
 
 const gridStyle = StyleSheet.create({
@@ -123,8 +159,6 @@ const gridStyle = StyleSheet.create({
     backgroundColor: '#80c3ff',
     borderColor: '#6dbbff',
     borderWidth: 3,
-    borderLeftWidth: 3,
-    borderRightWidth: 3,
     borderRadius: 5,
     marginTop: 30,
     padding: 10,
@@ -136,6 +170,15 @@ const gridStyle = StyleSheet.create({
     position: 'absolute',
     width: 80,
     height: 80,
+  },
+  winBox: {
+    position: 'absolute',
+    backgroundColor: 'rgba(188, 222, 255, 0.9)',
+    borderColor: '#9dc6ec',
+    borderWidth: 1,
+    padding: 100,
+    paddingLeft: 150,
+    paddingRight: 150,
   },
 });
 
