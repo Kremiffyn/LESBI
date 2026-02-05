@@ -1,17 +1,20 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import Pola from './../json/Pola.json';
 import { useState } from 'react';
 
 function Bingo() {
-  const [rows, setRows] = useState(GenerateFields());
+  const [resetCounter, setResetCounter] = useState(0);
+  const [rows, setRows] = useState(GenerateFields(0));
 
   const Reset = () => {
-    setRows(GenerateFields());
+    const next = resetCounter + 1;
+    setResetCounter(next);
+    setRows(GenerateFields(next));
   };
 
   return (
     <View style={gridStyle.bingoGrid}>
-      <BingoGrid rows={rows} />
+      <BingoGrid rows={rows} resetCounter={resetCounter} />
       <Pressable onPress={Reset}>
         <Text style={gridStyle.reset}>RESET</Text>
       </Pressable>
@@ -19,7 +22,7 @@ function Bingo() {
   );
 }
 
-function GenerateFields() {
+function GenerateFields(resetCounter: number) {
   let lastid = Pola.pola.length;
   let setOfTexts = new Set<string>();
 
@@ -45,7 +48,10 @@ function GenerateFields() {
     for (let c = 0; c < 5; c++) {
       cells.push(
         <Pressable key={c}>
-          <Field value={arrayOfText.at(r * 5 + c) ?? ''} />
+          <Field
+            key={`${resetCounter}-${r}-${c}`}
+            value={arrayOfText.at(r * 5 + c) ?? ''}
+          />
         </Pressable>,
       );
     }
@@ -68,8 +74,16 @@ type fieldProps = {
 };
 
 function Field({ value }: fieldProps) {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <Pressable style={gridStyle.fieldBox}>
+    <Pressable style={gridStyle.fieldBox} onPress={() => setChecked(!checked)}>
+      {checked && (
+        <Image
+          style={gridStyle.checked}
+          source={require('./../assets/icons/close_icon.png')}
+        />
+      )}
       <Text style={gridStyle.fieldText}>{value}</Text>
     </Pressable>
   );
@@ -80,7 +94,7 @@ const gridStyle = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 100,
+    marginTop: 150,
   },
   fieldBox: {
     width: 80,
@@ -117,6 +131,11 @@ const gridStyle = StyleSheet.create({
     paddingLeft: 100,
     paddingRight: 100,
     fontSize: 15,
+  },
+  checked: {
+    position: 'absolute',
+    width: 80,
+    height: 80,
   },
 });
 
