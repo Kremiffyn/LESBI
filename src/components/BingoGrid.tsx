@@ -1,18 +1,25 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Pola from './../json/Pola.json';
+import { useState } from 'react';
 
 function Bingo() {
+  const [rows, setRows] = useState(GenerateFields());
+
+  const Reset = () => {
+    setRows(GenerateFields());
+  };
+
   return (
     <View style={gridStyle.bingoGrid}>
-      <Losuj />
-      <Pressable>
+      <BingoGrid rows={rows} />
+      <Pressable onPress={Reset}>
         <Text style={gridStyle.reset}>RESET</Text>
       </Pressable>
     </View>
   );
 }
 
-function Losuj() {
+function GenerateFields() {
   let lastid = Pola.pola.length;
   let setOfTexts = new Set<string>();
 
@@ -49,6 +56,10 @@ function Losuj() {
     );
   }
 
+  return rows;
+}
+
+function BingoGrid({ rows }: any) {
   return <View>{rows}</View>;
 }
 
@@ -69,7 +80,7 @@ const gridStyle = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 100,
   },
   fieldBox: {
     width: 80,
@@ -77,21 +88,22 @@ const gridStyle = StyleSheet.create({
     borderRightWidth: 1,
     borderBottomWidth: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    borderColor: '#00529a',
   },
   fieldText: {
     fontFamily: 'FunnelSans-Regular',
-    padding: 5,
-    flexWrap: 'wrap',
+    padding: 1,
     textAlign: 'center',
     fontSize: 12,
   },
   topRow: {
     borderTopWidth: 1,
+    borderColor: '#00529a',
   },
   gridRow: {
     flexDirection: 'row',
     borderLeftWidth: 1,
+    borderColor: '#00529a',
   },
   reset: {
     backgroundColor: '#80c3ff',
@@ -100,12 +112,11 @@ const gridStyle = StyleSheet.create({
     borderLeftWidth: 3,
     borderRightWidth: 3,
     borderRadius: 5,
-    marginTop: 5,
+    marginTop: 30,
     padding: 10,
     paddingLeft: 100,
     paddingRight: 100,
     fontSize: 15,
-    color: '#363636',
   },
 });
 
